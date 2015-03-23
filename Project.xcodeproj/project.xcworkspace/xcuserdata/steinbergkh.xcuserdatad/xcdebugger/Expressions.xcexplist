@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Point::Point(double, double):Geometry.h">
+      </ContextState>
+      <ContextState
+         contextName = "Model::describe() const:Model.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "Model::Model():Model.cpp">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
