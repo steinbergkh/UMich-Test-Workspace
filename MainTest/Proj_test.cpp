@@ -7,12 +7,11 @@
 using namespace std;
 
 int run_all_tests(){
-	// NOTE: Change path to the location of your test files
-	string path = "/Users/Username/Downloads/THIS/SHOULD/BE/A/PATH";
-	
 	// NOTE: Change main_program_exe to the location of your main project's executable
 	string main_program_exe = "/Users/Username/Library/Developer/Xcode/DerivedData/THIS/SHOULD/BE/A/PATH/main";
 	
+	// NOTE: Change path to the location of your test files
+	string path = "/Users/Username/Downloads/THIS/SHOULD/BE/A/PATH";
 	
 	//  ------- Don't touch these ----------- 
 	Test_Case::set_folder_path(path);
