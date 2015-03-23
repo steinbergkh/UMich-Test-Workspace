@@ -8,10 +8,10 @@ using namespace std;
 
 int run_all_tests(){
 	// NOTE: Change path to the location of your test files
-	string path = "/Users/steinbergkh/Documents/Programming/test-suite/main/";
+	string path = "/Users/Username/Downloads/THIS/SHOULD/BE/A/PATH";
 	
 	// NOTE: Change main_program_exe to the location of your main project's executable
-	string main_program_exe = "/Users/steinbergkh/Library/Developer/Xcode/DerivedData/proj4-fpzvnpysmghfsncxwkuvwqgsmuiz/Build/Products/Debug/main";
+	string main_program_exe = "/Users/Username/Library/Developer/Xcode/DerivedData/THIS/SHOULD/BE/A/PATH/main";
 	
 	
 	//  ------- Don't touch these ----------- 
@@ -33,7 +33,7 @@ int run_all_tests(){
 	// 2. This way will add the complete file names following the above naming convention
 	test_bundle.add_test("Main Test 2 - Testing output", /* test name */
 						 "main");						 /* test case file name */
-
+	
 	
 	
 	// Do not add more tests after the following function or they won't run!

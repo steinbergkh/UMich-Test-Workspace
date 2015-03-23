@@ -20,6 +20,10 @@ private:
 	std::string executable;
 	
 	void print_test_bundle_status(int num_passed);
+	
+	// For set up purposes
+	static const std::string default_path;
+	static const std::string default_exe_path;
 };
 
 

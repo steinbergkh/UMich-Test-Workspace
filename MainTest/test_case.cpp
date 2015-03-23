@@ -13,6 +13,7 @@
 #include <string>
 #include <fstream>
 #include <vector>
+#include <iomanip>
 
 using namespace std;
 
@@ -57,8 +58,8 @@ int Test_Case::compare_files(){
 		while(getline(fp_my_output, my_line) && getline(fp_correct_output, correct_line)){
 			if (my_line != correct_line){
 				cout << "Files differ at line " << num_lines << ": " << endl;
-				cout << "Your output: " << my_line << endl;
-				cout << "Correct output: " << correct_line << endl;
+				cout << setw(20) << "Your output: " << my_line << endl;
+				cout <<  setw(20) << "Correct output: " << correct_line << endl;
 				status = -1;
 			}
 			else{
@@ -68,6 +69,10 @@ int Test_Case::compare_files(){
 		if(status != -1){
 			cout << "Files are identical" << endl;
 			status = 1;
+		}
+		else{
+			cout << endl;
+			status = 0;
 		}
 	}
 	fp_my_output.close();
@@ -98,7 +103,7 @@ void Test_Case::revertStdinStdout(){
 	close(fd_out);
 	clearerr(stdout);
 	fsetpos(stdout, &pos_out);
-
+	
 	// revert stdin
 	fflush(stdin);
 	dup2(fd_in, fileno(stdin));
@@ -111,8 +116,7 @@ bool Test_Case::run_test(const string& exe){
 	int system_status = 0; 
 	bool test_status = false;
 	
-	// Save original std:I:cin, std::cout
-	
+	// Check if input file can be opened
 	ifstream in(get_input_file());
 	if (!in){
 		cout << "Cannot open " << get_input_file() << " for reading" << endl;
@@ -120,6 +124,7 @@ bool Test_Case::run_test(const string& exe){
 	}
 	in.close();
 	
+	// clear output file
 	ofstream out(get_my_ouput());
 	if (!out){
 		cout << "Cannot open " << get_my_ouput() << " for writing" << endl;
@@ -208,7 +213,7 @@ int Test_Case::run_process(const string& exe_command){
 		printf("failed to fork child process\n");
 		return 1;
 	}
-		
+	
 	sleep(3);
 	
 	/* kill will send the specified signal to the specified process.

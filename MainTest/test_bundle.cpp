@@ -9,6 +9,10 @@
 using namespace std;
 using placeholders::_1;
 
+// statics used for set up purposes
+const string Test_Bundle::default_path = "/Users/Username/Downloads/THIS/SHOULD/BE/A/PATH";
+const string Test_Bundle::default_exe_path = "/Users/Username/Library/Developer/Xcode/DerivedData/THIS/SHOULD/BE/A/PATH/main";
+
 
 void Test_Bundle::add_test(string test_name_, string my_output_, string input_file_, string correct_output_){
 	++num_test_cases;
@@ -29,6 +33,18 @@ Test_Bundle::~Test_Bundle(){
 }
 
 void Test_Bundle::run_all_tests(){
+	bool defaults_changed = true;
+	if(Test_Case::get_folder_path() == Test_Bundle::default_path){
+		cout << "ERROR: Folder path for testing files has not been set in Proj_test.cpp file" << endl;
+		defaults_changed = false;
+	}
+	if (executable == Test_Bundle::default_exe_path){
+		cout << "ERROR: Executable path for main project executable has not been set in Proj_test.cpp file" << endl;
+		defaults_changed = false;
+	}
+	if (!defaults_changed){
+		return;
+	}
 	if (test_cases.empty()){
 		cout << "ERROR: This bundle does not contain any test cases" << endl;
 		return;

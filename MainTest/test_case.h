@@ -35,6 +35,8 @@ public:
 	~Test_Case(){ --num_test_cases; };
 	
 	static void set_folder_path(std::string folder_path){ path = folder_path; }
+	static std::string get_folder_path(){ return path; };
+	
 	std::string get_test_name(){ return test_name; }
 	std::string get_my_ouput(){ return path + my_output_file; }
 	std::string get_input_file(){ return path + input_file; }
