@@ -1,13 +1,5 @@
-//
-//  test_bundle.h
-//  proj4
-//
-//  Created by Katie Steinberg on 3/19/15.
-//  Copyright (c) 2015 Katie Steinberg. All rights reserved.
-//
-
-#ifndef __proj4__test_bundle__
-#define __proj4__test_bundle__
+#ifndef TEST_BUNDLE_H
+#define TEST_BUNDLE_H
 
 #include <stdio.h>
 #include <vector>
@@ -31,4 +23,4 @@ private:
 };
 
 
-#endif /* defined(__proj4__test_bundle__) */
+#endif /* defined(TEST_BUNDLE_H) */
